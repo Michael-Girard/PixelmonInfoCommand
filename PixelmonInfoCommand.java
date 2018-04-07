@@ -544,8 +544,15 @@ public class PixelmonInfoCommand extends CommandBase implements IClientCommand{
 	@Override
 	public List<String> getTabCompletions(MinecraftServer server, ICommandSender sender, String[] args,
 			BlockPos targetPos) {
-		// TODO Auto-generated method stub
-		return null;
+		final List<String> results = new ArrayList<>();
+		final String argument = args[0].substring(0, 1).toUpperCase() + args[0].substring(1).toLowerCase();
+		PIXELMON.keySet().stream().forEach(key ->{
+			Pixelmon pixelmon = PIXELMON.get(key);
+			if (pixelmon.getId().startsWith(argument)){
+				results.add(pixelmon.getId());
+			}
+		});
+		return results;
 	}
 
 	@Override
