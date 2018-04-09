@@ -1,3 +1,4 @@
 1.0: First release
 1.1: Implemented tab auto-completion for Pixelmon. Previously, pressing tab while typing in the command caused minecraft to crash.
 1.11: Removed /spawn alias. It was overriding a server-side command to warp back to the server's spawn point.
+1.12: Fixed MimeJr information display. Because the code achieved case-insensitivity by capitalizing the first letter of the pokemon's name and lowercasing the rest, it was searching for "Mimejr" when the J in Jr needed to be capitalized.
