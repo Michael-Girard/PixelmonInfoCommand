@@ -6,6 +6,6 @@ Known Issues:
 
 2) The command does not work with technic because PixelmonInfoCommand looks for files in the vanilla minecraft folder. This will be fixed, but for now the workaround involves copying a couple of files into the vanilla minecraft folders. You'll need to run the mod at least once first so BetterSpawnerConfig.json is created, and then...
 
-		a) Copy BetterSpawnerConfig.json from "%appdata%\roaming\.technic\modpacks\pixelmon-reforged\config\pixelmon" into "%appdata%\roaming\.minecraft\config\pixelmon". If the folders inside .minecraft do not exist, create them. Creating a shortcut may work, but needs to be tested.
+		a) Copy BetterSpawnerConfig.json from "%appdata%\roaming\.technic\modpacks\pixelmon-reforged\config\pixelmon" into "%appdata%\roaming\.minecraft\config\pixelmon". If the folders inside .minecraft do not exist, create them. Creating a shortcut instead may work, but it's untested.
 
-		b) Copy the Pixelmon JAR file from "%appdata%\roaming\.technic\modpacks\pixelmon-reforged\mods" into "%appdata%\roaming\.minecraft\mods". If the mods folder inside .minecraft does not exist, create it. Creating a shortcut may work, but needs to be tested.
+		b) Copy the Pixelmon JAR file from "%appdata%\roaming\.technic\modpacks\pixelmon-reforged\mods" into "%appdata%\roaming\.minecraft\mods". If the mods folder inside .minecraft does not exist, create it. Creating a shortcut instead may work, but it's untested.
