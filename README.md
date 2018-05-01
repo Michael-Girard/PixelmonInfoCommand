@@ -2,7 +2,7 @@
 Command for displaying pixelmon information in chat.
 
 Known Issues:
-1) (Fixed on 1.2) Minecraft with the pixelmon mod must be run once without the command jar in the mods folder. This is to have the pixelmon mod create BetterSpawnerConfig.json in Minecraft's config folder. If BetterSpawnerConfig.json does not exist, the mod will throw an error during minecraft's startup and the game will not start.
+1) Minecraft with the pixelmon mod must be run once without the command jar in the mods folder. This is to have the pixelmon mod create BetterSpawnerConfig.json in Minecraft's config folder. If BetterSpawnerConfig.json does not exist, the mod will throw an error during minecraft's startup and the game will not start.
 
 2) (Potentially Fixed on 1.2 - Needs Testing) The command does not work with technic because PixelmonInfoCommand looks for files in the vanilla minecraft folder. This will be fixed, but for now the workaround involves copying a couple of files into the vanilla minecraft folders. You'll need to run the mod at least once first so BetterSpawnerConfig.json is created, and then...
 
