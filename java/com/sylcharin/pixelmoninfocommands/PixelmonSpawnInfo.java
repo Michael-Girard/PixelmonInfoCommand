@@ -67,32 +67,8 @@ public class PixelmonSpawnInfo extends CommandBase implements IClientCommand{
 			sender.sendMessage(new TextComponentString("Usage: " + this.getUsage(null)));
 			return;
 		}
-		//If there was an error parsing BetterSpawnerConfig, try again. If it fails again, return an error message.
-		if (JSONHelper.betterSpawnerConfigError != null){
-			try {
-				JSONHelper.getInstance().parseBetterSpawnerConfig();
-			}
-			catch (URISyntaxException e) {
-				e.printStackTrace();
-			}
-			if (JSONHelper.betterSpawnerConfigError != null){
-				sender.sendMessage(new TextComponentString("Unable to parse BetterSpawnerConfig.json: " + JSONHelper.betterSpawnerConfigError));
-				return;
-			}
-		}
-		//If there was an using the Pixelmon JAR, try again. If it fails again, return an error message.
-		if (JSONHelper.pixelmonJarError != null){
-			try {
-				JSONHelper.getInstance().getPixelmonJar();
-			}
-			catch (URISyntaxException e) {
-				e.printStackTrace();
-			}
-			if (JSONHelper.pixelmonJarError != null){
-				sender.sendMessage(new TextComponentString("Unable to find or read the Pixelmon JAR file: " + JSONHelper.pixelmonJarError));
-				return;
-			}
-		}
+
+		checkForErrors(sender);
 
 		String pixelmonName = JSONHelper.formatTitleCase(args[0]);
 		if (pixelmonName.equals("Mimejr")) pixelmonName = "MimeJr";	//Capitalize the second J in the MimeJr edgecase
@@ -113,6 +89,7 @@ public class PixelmonSpawnInfo extends CommandBase implements IClientCommand{
 	@Override
 	public List<String> getTabCompletions(MinecraftServer server, ICommandSender sender, String[] args,
 			BlockPos targetPos) {
+    	checkForErrors(sender);
 		final List<String> results = new ArrayList<>();
 		final String argument = args[0].substring(0, 1).toUpperCase() + args[0].substring(1).toLowerCase();
 		JSONHelper.getPixelmon().keySet().stream().forEach(key ->{
@@ -142,6 +119,45 @@ public class PixelmonSpawnInfo extends CommandBase implements IClientCommand{
 	@Override
 	public int getRequiredPermissionLevel() {
 		return 0;
+	}
+
+	private boolean checkForErrors(ICommandSender sender){
+		boolean error = false;
+		//If there was an error parsing BetterSpawnerConfig, try again. If it fails again, return an error message.
+		if (JSONHelper.betterSpawnerConfigError != null){
+			error = true;
+			try {
+				JSONHelper.getInstance().parseBetterSpawnerConfig();
+			}
+			catch (URISyntaxException e) {
+				e.printStackTrace();
+			}
+			if (JSONHelper.betterSpawnerConfigError != null){
+				sender.sendMessage(new TextComponentString("Unable to parse BetterSpawnerConfig.json: " + JSONHelper.betterSpawnerConfigError));
+				return error;
+			}
+		}
+		//If there was an using the Pixelmon JAR, try again. If it fails again, return an error message.
+		if (JSONHelper.pixelmonJarError != null){
+			error = true;
+			try {
+				JSONHelper.getInstance().getPixelmonJar();
+			}
+			catch (URISyntaxException e) {
+				e.printStackTrace();
+			}
+			if (JSONHelper.pixelmonJarError != null){
+				sender.sendMessage(new TextComponentString("Unable to find or read the Pixelmon JAR file: " + JSONHelper.pixelmonJarError));
+				return error;
+			}
+		}
+		if (error){
+			JSONHelper.buildJSONList();
+			BiomeList.getInstance();
+			JSONHelper.buildPixelmonMap();
+			error = false;
+		}
+		return error;
 	}
 }
 
