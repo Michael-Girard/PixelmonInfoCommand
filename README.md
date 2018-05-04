@@ -1,6 +1,11 @@
 # PixelmonInfoCommand
 Command for displaying pixelmon information in chat.
 
+Usage:
+/spawninfo [argument 1] [argument 2] ..
+Arguments can be a Pixelmon name OR a group of tags containing biome names, weathers, or other pixelmon spawn conditions.
+Names with spaces should be separated by underscores. Eg: "Mesa_Plateau_M"
+
 Known Issues:
 
 1) (Potentially Fixed on 1.2 - Needs Testing) The command does not work with technic because PixelmonInfoCommand looks for files in the vanilla minecraft folder. This will be fixed, but for now the workaround involves copying a couple of files into the vanilla minecraft folders. You'll need to run the mod at least once first so BetterSpawnerConfig.json is created, and then...
