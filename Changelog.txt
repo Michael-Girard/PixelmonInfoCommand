@@ -14,4 +14,5 @@
   5) The mod now returns various error messages. For example, when sent incompatible tag sets or tags that aren't recognized by the command.
 
 1.5.1: Fixed a problem getting information for Pixelmon that exist in all biomes. Also added code to display an spawn chance for Pixelmon that show up in every biome. It's an averaging of all their spawn chances in all biomes.
-1.5.2: Fixed biomes and percentages being duplicated when a pixelmon has multiple sets of spawn information. Cosmetic changes.
+1.5.2: Fixed biomes and percentages being duplicated when a Pixelmon has multiple sets of spawn information. Cosmetic changes.
+1.5.3: Fixed some problems the code was having getting Pixelmon for Mesa (Bryce) biome.
