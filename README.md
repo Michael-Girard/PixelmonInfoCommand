@@ -2,8 +2,8 @@
 Command for displaying pixelmon information in chat.
 
 Usage:
-/spawninfo [argument 1] [argument 2] ..
-Arguments can be a Pixelmon name OR a group of tags containing biome names, weathers, or other pixelmon spawn conditions.
+/spawninfo [argument 1] [argument 2] ... etc.  
+Arguments can be a Pixelmon name OR a group of tags containing biome names, weathers, or other pixelmon spawn conditions.  
 Names with spaces should be separated by underscores. Eg: "Mesa_Plateau_M"
 
 Known Issues:
