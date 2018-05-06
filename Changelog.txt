@@ -16,3 +16,7 @@
 1.5.1: Fixed a problem getting information for Pixelmon that exist in all biomes. Also added code to display an spawn chance for Pixelmon that show up in every biome. It's an averaging of all their spawn chances in all biomes.
 1.5.2: Fixed biomes and percentages being duplicated when a Pixelmon has multiple sets of spawn information. Cosmetic changes.
 1.5.3: Fixed some problems the code was having getting Pixelmon for Mesa (Bryce) biome.
+2.0: 
+  1) Added a new command: /drops. This command looks up drops by pixelmon by doing "/drops <pixelmon>" or pixelmon that drop an item by doing "/drops <item_name>".
+  2) New mcmod.info stuff, so the mod looks better in the mod info screen, includes both commands in a single mod, and gives credit to the Pixelmon Reforged Dev Team for Pixelmonmod.
+  3) Code is over in the Pixelmon_Information_Commands repository now. I learned how Git works so I can actually make proper use of the version control stuff instead of just using this as a file upload site.
