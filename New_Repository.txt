@@ -1,0 +1,3 @@
+This repository is no longer being updated.  
+This mod can now be found at the Pixelmon_Information_Commands repository.  
+https://github.com/Michael-Girard/Pixelmon_Information_Commands
